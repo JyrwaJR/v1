@@ -39,59 +39,60 @@ const Fade = ({
   }, [isInView, mainControls]);
 
   return (
-    <motion.div
-      ref={ref}
-      {...props}
-      className={style}
-      variants={{
-        hidden: {
-          opacity: fadeIn ? 0 : 1,
-          x: startX || 0,
-          y: startY || 50,
-        },
-        visible: {
-          opacity: fadeIn ? 1 : 0,
-          x: 0,
-          y: 0,
-          transition: {
-            y: {
-              type: type,
-              delay: delay ? delay : 0.5,
-              duration: 0.5,
-              damping: 0,
-              easings: {
-                type: "easeInOut",
-                stiffness: 100,
+    <div ref={ref}>
+      <motion.div
+        {...props}
+        className={style}
+        variants={{
+          hidden: {
+            opacity: fadeIn ? 0 : 1,
+            x: startX || 0,
+            y: startY || 50,
+          },
+          visible: {
+            opacity: fadeIn ? 1 : 0,
+            x: 0,
+            y: 0,
+            transition: {
+              y: {
+                type: type,
+                delay: delay ? delay : 0.5,
+                duration: 0.5,
+                damping: 0,
+                easings: {
+                  type: "easeInOut",
+                  stiffness: 100,
+                },
               },
-            },
-            x: {
-              type: type,
-              delay: delay ? delay : 0.5,
-              duration: 0.5,
-              damping: 0,
-              easings: {
-                type: "easeInOut",
-                stiffness: 100,
+              x: {
+                type: type,
+                delay: delay ? delay : 0.5,
+                duration: 0.5,
+                damping: 0,
+                easings: {
+                  type: "easeInOut",
+                  stiffness: 100,
+                },
               },
-            },
-            opacity: {
-              type: type,
-              duration: 0.5,
-              delay: delay ? delay : 0.5,
-              damping: 300,
-              easings: {
-                type: "easeInOut",
-                stiffness: 100,
+              opacity: {
+                type: type,
+                duration: 0.5,
+                delay: delay ? delay : 0.5,
+                damping: 300,
+                easings: {
+                  type: "easeInOut",
+                  stiffness: 100,
+                },
               },
             },
           },
-        },
-      }}
-      initial="hidden"
-      animate={mainControls}
-    >
-      {children}
-    </motion.div>
+        }}
+        initial="hidden"
+        animate={mainControls}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 };
 

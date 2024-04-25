@@ -148,7 +148,7 @@ export const SocialMenuBar = () => {
     <div className="fixed bottom-0 z-50 md:block hidden">
       <div className="flex space-x-5">
         {socialMedia.map((link, index) => (
-          <Fade key={index} delay={index + 1 * 0.5}>
+          <Fade key={index} delay={index * 0.5}>
             <motion.div
               whileHover={{
                 scale: 1.1,

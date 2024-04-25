@@ -50,7 +50,19 @@ const Nav = ({
 }) => {
   return (
     <>
-      <div className="p-5 backdrop-blur-sm w-full z-50 fixed top-0 left-0 right-0">
+      <motion.div
+        style={{
+          // backgroundColor: isMobileOpen ?  : "white",
+          padding: "1.25rem",
+          width: "100%",
+          zIndex: 50,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+        }}
+        className={isMobileOpen ? "bg-background" : "backdrop-blur-sm"}
+      >
         <div className="flex items-center h-full justify-between">
           <Fade startY={-25}>
             <Link
@@ -84,7 +96,7 @@ const Nav = ({
             </Fade>
           </div>
         </div>
-      </div>
+      </motion.div>
       <MobileNav onClick={onClick} isOpen={isMobileOpen} />
     </>
   );

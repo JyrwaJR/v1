@@ -37,7 +37,6 @@ const Page = () => {
           enableSystem
           disableTransitionOnChange
         >
-          <GridGuide />
           <Nav isLoaded={isMounted} onClick={onClick} isMobileOpen={isOpen} />
           <div className="scrollGroup overflow-hidden">
             <div className="md:container">

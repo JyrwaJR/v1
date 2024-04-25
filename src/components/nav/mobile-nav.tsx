@@ -96,7 +96,7 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
                   <Link href={link.url} target="_self">
                     <Text
                       className={textVariants({
-                        size: "p1",
+                        size: "p3",
                         weight: "semiBold",
                         className: "text-slate hover:text-green",
                       })}
@@ -121,9 +121,8 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
             zIndex: -40,
             overflow: "hidden",
             transition: {
-              duration: 0.6,
+              duration: 0.5,
             },
-
             type: "tween",
           },
           visible: {
@@ -132,7 +131,7 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
             opacity: 1,
             zIndex: 40,
             transition: {
-              duration: 0.6,
+              duration: 0.5,
             },
             type: "tween",
           },
