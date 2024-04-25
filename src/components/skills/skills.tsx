@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "../text";
+import { Text, textVariants } from "../text";
 import { MySkill } from "./my-skills";
 import { SkillsCard } from "./skillsCard";
 import Fade from "../fade";
@@ -9,12 +9,24 @@ const Skills = () => {
     <div className="my-4 md:my-14">
       <div className="justify-items-center items-stretch content-center grid grid-cols-12">
         <div className="text-center h-full my-5 col-span-full">
-          <Fade>
+          <Fade className="flex flex-col space-y-3">
+            <Text className="text-5xl leading-10 tracking-tighter text-lightestSlate">
+              Tools /{" "}
+              <span
+                className={textVariants({
+                  weight: "extraBold",
+                  className: "text-green",
+                })}
+              >
+                Skills
+              </span>
+            </Text>
             <Text
-              weight={"bold"}
-              className="text-5xl leading-10 tracking-tighter text-lightestSlate"
+              size={"p2"}
+              weight={"thin"}
+              className="text-5xl leading-10 tracking-tighter text-lightSlate"
             >
-              My Skills
+              Here are a few technologies I’ve been working with recently
             </Text>
           </Fade>
         </div>

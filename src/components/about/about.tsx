@@ -27,15 +27,14 @@ const About = () => {
     <div className="grid grid-cols-2 justify-center content-center items-center justify-items-center space-x-10 space-y-10 py-14">
       <div className="col-span-2 md:col-span-1">
         <div className="aspect-square w-full h-full">
-          <Fade>
-            <Image
-              src={"/head-shot.jpg"}
-              width={524}
-              height={524}
-              className="aspect-square object-cover rounded-xl opacity-80"
-              alt="hero image not display"
-            />
-          </Fade>
+          <motion.img
+            whileHover={{
+              scale: 1.1, // Scale the image to 1.1 times its original size
+            }}
+            src={"/head-shot.jpg"}
+            className="aspect-square max-h-[534px] max-w-[524] w-auto h-auto  object-center rounded-xl opacity-80"
+            alt="hero image not display"
+          />
         </div>
       </div>
       <div className="col-span-full md:col-span-1 content-center space-y-5  h-full">

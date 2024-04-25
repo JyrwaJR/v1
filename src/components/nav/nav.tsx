@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-import { Button, buttonVariants } from "../ui/button";
+import React, { useEffect } from "react";
+import { buttonVariants } from "../ui/button";
 import { Text, textVariants } from "../text";
 import { DownloadIcon } from "@radix-ui/react-icons";
 import Fade from "../fade";
 import MobileNav from "./mobile-nav";
-import { MenuIcon } from "lucide-react";
 import { Squash as Hamburger } from "hamburger-react";
+import { useScroll, motion } from "framer-motion";
 export type NavLinksTypes = {
   url: string;
   name: string;
@@ -41,7 +41,6 @@ export const NavLinks: NavLinksTypes[] = [
   },
 ];
 const Nav = ({
-  isLoaded,
   isMobileOpen,
   onClick,
 }: {
@@ -49,12 +48,9 @@ const Nav = ({
   isMobileOpen: boolean;
   onClick: () => void;
 }) => {
-  if (!isLoaded) {
-    return;
-  }
   return (
     <>
-      <div className="p-5 backdrop-blur-sm w-full z-50 fixed top-0 left-0 right-0 ">
+      <div className="p-5 backdrop-blur-sm w-full z-50 fixed top-0 left-0 right-0">
         <div className="flex items-center h-full justify-between">
           <Fade startY={-25}>
             <Link
@@ -72,18 +68,20 @@ const Nav = ({
 
           <DesktopNav />
           <div className="lg:hidden">
-            <Hamburger
-              rounded
-              label="show menu"
-              size={28}
-              easing="ease-in"
-              distance="md"
-              direction="right"
-              duration={0.5}
-              color="#64ffda"
-              toggled={isMobileOpen}
-              toggle={onClick}
-            />
+            <Fade startY={-25}>
+              <Hamburger
+                rounded
+                label="show menu"
+                size={28}
+                easing="ease-in"
+                distance="md"
+                direction="right"
+                duration={0.5}
+                color="#64ffda"
+                toggled={isMobileOpen}
+                toggle={onClick}
+              />
+            </Fade>
           </div>
         </div>
       </div>

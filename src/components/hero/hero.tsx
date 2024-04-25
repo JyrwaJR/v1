@@ -9,6 +9,7 @@ import Nav from "../nav/nav";
 import MobileNav from "../nav/mobile-nav";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { email, socialMedia } from "@src/config";
+import { motion } from "framer-motion";
 type SocialLinksType = {
   url: string;
   name: string;
@@ -29,7 +30,6 @@ const One = () => {
   return (
     <div className="">
       <Text size={"displayL"} className="text-lightSlate">
-        {" "}
         {`I'am`}{" "}
         <span
           className={textVariants({
@@ -145,22 +145,30 @@ export default Hero;
 
 export const SocialMenuBar = () => {
   return (
-    <div className="absolute lg:left-36 bottom-0 md:block hidden">
+    <div className="fixed bottom-0 z-50 md:block hidden">
       <div className="flex space-x-5">
         {socialMedia.map((link, index) => (
           <Fade key={index} delay={index + 1 * 0.5}>
-            <Link
-              href={link.url}
-              target="_blank"
-              className={buttonVariants({
-                variant: "outline",
-                size: "icon",
-                className:
-                  "border-slate text-slate hover:border-green hover:scale-110 border-1 text-center font-bold rounded-full  flex items-center justify-center  hover:text-green",
-              })}
+            <motion.div
+              whileHover={{
+                scale: 1.1,
+                y: -5,
+                transition: { duration: 0.2 },
+              }}
             >
-              <Icons name={link.name} className="text-inherit" />
-            </Link>
+              <Link
+                href={link.url}
+                target="_blank"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "icon",
+                  className:
+                    "border-slate text-slate hover:border-green hover:scale-110 border-1 text-center font-bold rounded-full  flex items-center justify-center  hover:text-green",
+                })}
+              >
+                <Icons name={link.name} className="text-inherit" />
+              </Link>
+            </motion.div>
           </Fade>
         ))}
       </div>

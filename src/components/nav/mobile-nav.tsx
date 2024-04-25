@@ -49,7 +49,7 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
             type: "tween",
           },
         }}
-        className={`mt-[5rem] bg-center justify-center items-center absolute bg-background`}
+        className={`mt-[5rem] bg-center justify-center items-center fixed bg-background`}
       >
         <motion.div
           animate={isOpen ? "visible" : "hidden"}
@@ -138,7 +138,7 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
           },
         }}
         onClick={onClick}
-        className="mt-[5rem] top-0 left-0 right-0 bottom-0 backdrop-blur-sm  absolute w-full "
+        className="mt-[5rem] top-0 left-0 right-0 bottom-0 backdrop-blur-sm  fixed w-full "
       />
     </>
   );
