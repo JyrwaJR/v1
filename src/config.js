@@ -1,5 +1,12 @@
 module.exports = {
+  siteUrl: "https://jyrwaboys.netlify.app/",
+  siteTitle: "Harrison Jyrwa",
+  siteDescription:
+    "Harrison Jyrwa is a Full Stack Developer based in India. He specializes in building websites, applications, and everything in between.",
   email: "jyrwaboys@gmail.com",
+  seo: {
+    imageUrl: "./seo/og.png",
+  },
   socialMedia: [
     {
       name: "GitHub",

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { buttonVariants } from "../ui/button";
 import { Text, textVariants } from "../text";
 import { DownloadIcon } from "@radix-ui/react-icons";
@@ -40,14 +40,30 @@ export const NavLinks: NavLinksTypes[] = [
     name: "Resume",
   },
 ];
-const Nav = ({
-  isMobileOpen,
-  onClick,
-}: {
-  isLoaded: boolean;
-  isMobileOpen: boolean;
-  onClick: () => void;
-}) => {
+
+const Nav = (
+  {
+    //isMobileOpen
+    // onClick,
+  }: {
+    isLoaded: boolean;
+    //isMobileOpen?: boolean;
+    onClick?: () => void;
+  },
+) => {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const onClick = useCallback(() => {
+    setIsMobileOpen(!isMobileOpen);
+  }, [isMobileOpen]);
+
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = "hidden"; // Disable scrolling when nav opens
+    } else {
+      document.body.style.overflow = ""; // Enable scrolling when nav closes
+    }
+  }, [isMobileOpen]);
   return (
     <>
       <motion.div
@@ -60,10 +76,11 @@ const Nav = ({
           top: 0,
           left: 0,
           right: 0,
+          overflow: "hidden",
         }}
         className={isMobileOpen ? "bg-background" : "backdrop-blur-sm"}
       >
-        <div className="flex items-center h-full justify-between">
+        <div className="flex h-full items-center justify-between">
           <Fade startY={-25}>
             <Link
               className={textVariants({
@@ -107,7 +124,7 @@ export default Nav;
 const DesktopNav = () => {
   return (
     <div className="hidden lg:flex">
-      <div className="flex space-x-7 justify-center items-center">
+      <div className="flex items-center justify-center space-x-7">
         {NavLinks.map((link, index) => (
           <Fade
             startY={link.name === "Resume" ? -50 : -25}

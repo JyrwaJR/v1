@@ -96,7 +96,7 @@ const Four = () => {
         <span
           className={textVariants({
             weight: "extraBold",
-            className: "text-green uppercase",
+            className: "uppercase text-green",
           })}
         >
           web
@@ -127,10 +127,10 @@ const items = [Zero, One, Two, Three, Four, Five];
 const Hero = () => {
   return (
     <>
-      <div className="h-screen px-5 md:px-0 md:container">
-        <div className="h-full flex flex-col space-y-2 items-start justify-center">
+      <div className="h-screen px-5 md:container md:px-0">
+        <div className="flex h-full flex-col items-start justify-center space-y-2">
           {items.map((Item, index) => (
-            <Fade key={index} type="just" delay={index * 0.3}>
+            <Fade key={index} type="just" delay={index}>
               <Item />
             </Fade>
           ))}
@@ -145,10 +145,10 @@ export default Hero;
 
 export const SocialMenuBar = () => {
   return (
-    <div className="fixed bottom-0 z-50 md:block hidden">
+    <div className="fixed bottom-0 z-50 hidden md:block">
       <div className="flex space-x-5">
         {socialMedia.map((link, index) => (
-          <Fade key={index} delay={index * 0.5}>
+          <Fade key={index} delay={index}>
             <motion.div
               whileHover={{
                 scale: 1.1,
@@ -163,7 +163,7 @@ export const SocialMenuBar = () => {
                   variant: "outline",
                   size: "icon",
                   className:
-                    "border-slate text-slate hover:border-green hover:scale-110 border-1 text-center font-bold rounded-full  flex items-center justify-center  hover:text-green",
+                    "border-1 flex items-center justify-center rounded-full border-slate text-center font-bold  text-slate hover:scale-110 hover:border-green  hover:text-green",
                 })}
               >
                 <Icons name={link.name} className="text-inherit" />

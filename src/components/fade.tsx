@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@src/lib/utils";
+import clsx from "clsx";
 
 type FadeProps = {
   children: React.ReactNode;
@@ -12,7 +12,6 @@ type FadeProps = {
   fadeIn?: boolean;
   type?: "just" | "tween" | "spring" | "inertia" | "keyframes";
   className?: string;
-  props?: any;
 };
 
 const Fade = ({
@@ -23,11 +22,11 @@ const Fade = ({
   type = "tween",
   fadeIn = true,
   className,
-  props,
 }: FadeProps) => {
+  const delayTime = delay === 0 ? 0.5 * 0.1 : delay ? delay * 0.5 : 0.2;
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: false,
+    once: true,
   });
   const style = cn("inherit", className);
   const mainControls = useAnimation();
@@ -41,7 +40,6 @@ const Fade = ({
   return (
     <div ref={ref}>
       <motion.div
-        {...props}
         className={style}
         variants={{
           hidden: {
@@ -56,7 +54,7 @@ const Fade = ({
             transition: {
               y: {
                 type: type,
-                delay: delay ? delay : 0.5,
+                delay: delayTime ? delayTime : 0.5,
                 duration: 0.5,
                 damping: 0,
                 easings: {
@@ -66,7 +64,7 @@ const Fade = ({
               },
               x: {
                 type: type,
-                delay: delay ? delay : 0.5,
+                delay: delayTime ? delayTime : 0.5,
                 duration: 0.5,
                 damping: 0,
                 easings: {
@@ -77,7 +75,7 @@ const Fade = ({
               opacity: {
                 type: type,
                 duration: 0.5,
-                delay: delay ? delay : 0.5,
+                delay: delayTime ? delayTime : 0.5,
                 damping: 300,
                 easings: {
                   type: "easeInOut",

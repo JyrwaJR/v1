@@ -25,7 +25,7 @@ const Two = () => {
 };
 const Three = () => {
   return (
-    <div className="flex text-slate justify-center">
+    <div className="flex justify-center text-slate">
       <div className="w-7/12">
         <Text size={"p2"}>
           While {`I'm`} not actively seeking new opportunities at the moment,
@@ -56,9 +56,9 @@ const items = [One, Two, Three, Four];
 const Contact = () => {
   return (
     <div className="py-16">
-      <div className="h-full text-center text-lightestSlate place-items-center flex items-center justify-items-center space-y-5 flex-col">
+      <div className="flex h-full flex-col place-items-center items-center justify-items-center space-y-5 text-center text-lightestSlate">
         {items.map((Item, index) => (
-          <Fade key={index} delay={index * 0.5}>
+          <Fade key={index} delay={index}>
             <Item />
           </Fade>
         ))}
