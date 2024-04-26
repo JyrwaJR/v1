@@ -48,6 +48,7 @@ export default function RootLayout({
 const Header = () => {
   return (
     <head>
+      <html lang="en" />
       <title>{siteTitle}</title>
       <meta name="title" content={siteTitle} />
       <meta name="description" content={siteDescription} />
@@ -58,8 +59,14 @@ const Header = () => {
       <meta property="og:description" content={siteDescription} />
       <meta property="og:image" content={seo.imageUrl} />
 
+      <meta property="og:title" content={siteTitle} />
+      <meta property="og:description" content={siteDescription} />
+      <meta property="og:image" content={seo.imageUrl} />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:type" content="website" />
+
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={"https://x.com/jyrwaboys?s=09"} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={siteDescription} />
       <meta property="twitter:image" content={seo.imageUrl} />
