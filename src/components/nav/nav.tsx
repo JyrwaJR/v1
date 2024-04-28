@@ -150,7 +150,7 @@ const DesktopNav = () => {
                     className: "text-slate hover:text-green",
                   })}
                 >
-                  0{index + 1}. {link.name}
+                  {link.name}
                 </Text>
               </Link>
             )}

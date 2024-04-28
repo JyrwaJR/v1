@@ -53,7 +53,7 @@ export interface TextProps
 
 const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
   ({ className, variant, size, weight, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "h1";
+    const Comp = asChild ? Slot : "p";
     return (
       <Comp
         className={textVariants({ variant, size, weight, className })}
@@ -61,7 +61,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Text.displayName = "Text";

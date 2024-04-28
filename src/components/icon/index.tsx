@@ -14,27 +14,27 @@ import TailwindCssIcon from "./tailwindcss";
 import FigmaIcon from "./figma";
 import CypressIcon from "./cypress";
 import GitIcon from "./git";
-import { cva, VariantProps } from "class-variance-authority";
-import GithubIcon from "./github";
-import InstagramIcon from "./instagram";
-import TwitterIcon from "./twitter";
-import LinkedinIcon from "./linkedin";
+import { FolderIcon, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export interface IconProps {
   name?: string;
   className?: string;
 }
 const Icons = ({ name, className }: IconProps) => {
-  const style = cn("fill-current w-6 h-6", className);
+  const style = cn("w-6 h-6", className);
   switch (name?.toLowerCase()) {
+    case "folder":
+      return <FolderIcon className={style} />;
     case "github":
-      return <GithubIcon className={style} />;
+      return <Github className={style} />;
     case "instagram":
-      return <InstagramIcon className={style} />;
+      return <Instagram className={style} />;
     case "linkedin":
-      return <LinkedinIcon className={style} />;
-    case "twitter" || "x":
-      return <TwitterIcon className={style} />;
+      return <Linkedin className={style} />;
+    case "twitter":
+      return <Twitter className={style} />;
+    case "x":
+      return <Twitter className={style} />;
     case "javascript":
       return <JavaScriptIcon className={style} />;
     case "typescript":

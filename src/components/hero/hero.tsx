@@ -127,7 +127,7 @@ const items = [Zero, One, Two, Three, Four, Five];
 const Hero = () => {
   return (
     <>
-      <div className="h-screen px-5 md:container md:px-0">
+      <div className="h-screen px-5 md:px-0">
         <div className="flex h-full flex-col items-start justify-center space-y-2">
           {items.map((Item, index) => (
             <Fade key={index} type="just" delay={index}>
@@ -163,10 +163,13 @@ export const SocialMenuBar = () => {
                   variant: "outline",
                   size: "icon",
                   className:
-                    "border-1 flex items-center justify-center rounded-full border-slate text-center font-bold  text-slate hover:scale-110 hover:border-green  hover:text-green",
+                    "border-1 flex items-center justify-center rounded-full border-slate bg-transparent text-center  font-bold text-slate hover:scale-110 hover:border-green  hover:text-green",
                 })}
               >
-                <Icons name={link.name} className="text-inherit" />
+                <Icons
+                  name={link.name}
+                  className="h-6 w-6 fill-none text-inherit"
+                />
               </Link>
             </motion.div>
           </Fade>

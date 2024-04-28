@@ -4,7 +4,7 @@ type Props = {
   className?: string;
 };
 const JavaScriptIcon = ({ className }: Props) => {
-  const style = cn("w-14 h-14", className);
+  const style = cn("w-14 h-14 fill-current", className);
   return (
     <svg
       viewBox={`0 0 50 50`}
