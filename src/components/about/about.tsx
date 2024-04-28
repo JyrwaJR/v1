@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { Text, textVariants } from "../text";
-import Image from "next/image";
 import { useAnimation, useInView, motion } from "framer-motion";
 import Fade from "../fade";
 
@@ -24,20 +23,22 @@ const About = () => {
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque id accusantium laudantium dignissimos, officia eum, minima rerum praesentium totam molestiae necessitatibus. Asperiores tempora excepturi blanditiis debitis unde fuga architecto nam.";
   const texts = [aboutMeText1, aboutMeText2];
   return (
-    <div className="grid grid-cols-2 justify-center content-center items-center justify-items-center space-x-10 space-y-10 py-14">
+    <div className="grid grid-cols-2 content-center items-center justify-center justify-items-center space-x-10 space-y-10 py-14">
       <div className="col-span-2 md:col-span-1">
-        <div className="aspect-square w-full h-full">
-          <motion.img
-            whileHover={{
-              scale: 1.1, // Scale the image to 1.1 times its original size
-            }}
-            src={"/head-shot.jpg"}
-            className="aspect-square max-h-[534px] max-w-[524] w-auto h-auto  object-center rounded-xl opacity-80"
-            alt="hero image not display"
-          />
+        <div className="aspect-square h-full w-full">
+          <div className="max-h-[534px] max-w-[524]">
+            <motion.img
+              whileHover={{
+                scale: 1.1, // Scale the image to 1.1 times its original size
+              }}
+              src={"/seo/head-shot.jpg"}
+              className="aspect-square h-auto  rounded-xl object-center opacity-80"
+              alt="hero image not display"
+            />
+          </div>
         </div>
       </div>
-      <div className="col-span-full md:col-span-1 content-center space-y-5  h-full">
+      <div className="col-span-full h-full content-center space-y-5  md:col-span-1">
         <div className="text-center text-lightestSlate">
           <Fade>
             <Text size="displayL" className="font-thin">
@@ -52,7 +53,7 @@ const About = () => {
             </Text>
           </Fade>
         </div>
-        <div className="flex flex-col space-y-5 indent-10 text-start">
+        <div className="flex flex-col space-y-5 text-start indent-10">
           {texts.map((text, index) => (
             <Fade key={index} delay={index * 0.2}>
               <Text size="p2" className="text-lightSlate">

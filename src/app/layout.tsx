@@ -48,28 +48,41 @@ export default function RootLayout({
 const Header = () => {
   return (
     <head>
-      <html lang="en" />
-      <title>{siteTitle}</title>
-      <meta name="title" content={siteTitle} />
-      <meta name="description" content={siteDescription} />
-
+      <title>Harrison Jyrwa</title>
+      <meta
+        name="description"
+        content="Harrison Jyrwa is a Full Stack Developer based in India. He specializes in building websites, applications, and everything in between."
+      />
+      veer
+      <meta property="og:url" content="https://jyrwaboys.vercel.app/" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:title" content={siteTitle} />
-      <meta property="og:description" content={siteDescription} />
-      <meta property="og:image" content={seo.imageUrl} />
-
-      <meta property="og:title" content={siteTitle} />
-      <meta property="og:description" content={siteDescription} />
-      <meta property="og:image" content={seo.imageUrl} />
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:type" content="website" />
-
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={seo.twitterUsername} />
-      <meta property="twitter:title" content={siteTitle} />
-      <meta property="twitter:description" content={siteDescription} />
-      <meta property="twitter:image" content={seo.imageUrl} />
+      <meta property="og:title" content="Harrison Jyrwa" />
+      <meta
+        property="og:description"
+        content="Harrison Jyrwa is a Full Stack Developer based in India. He specializes in building websites, applications, and everything in between."
+      />
+      <meta
+        property="og:image"
+        content="https://jyrwaboys.vercel.app/seo/og.png"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="jyrwaboys.vercel.app" />
+      <meta property="twitter:url" content="https://jyrwaboys.vercel.app/" />
+      <meta name="twitter:title" content="Harrison Jyrwa" />
+      <meta
+        name="twitter:description"
+        content="Harrison Jyrwa is a Full Stack Developer based in India. He specializes in building websites, applications, and everything in between."
+      />
+      <meta
+        name="twitter:image"
+        content="https://jyrwaboys.vercel.app/seo/og.png"
+      />
+      <meta name="robots" content="noindex,nofollow" />
+      {/* google site verification */}
+      <meta
+        name="google-site-verification"
+        content="xuV-K38QQwcUNaJhxNyxtDInrbi66eo2z44IoVhZeY4"
+      />
     </head>
   );
 };
