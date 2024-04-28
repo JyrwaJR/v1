@@ -3,13 +3,11 @@ import About from "@src/components/about/about";
 import Contact from "@src/components/contact/contact";
 import Experience from "@src/components/experience/experience";
 import Footer from "@src/components/footer/footer";
-import GridGuide from "@src/components/grid";
 import Hero from "@src/components/hero/hero";
 import Nav from "@src/components/nav/nav";
+import Projects from "@src/components/projects/projects";
 import Skills from "@src/components/skills/skills";
-import { cn } from "@src/lib/utils";
-import { ThemeProvider } from "@src/theme/providers";
-import { Sora } from "next/font/google";
+import { ScrollArea } from "@src/components/ui/scroll-area";
 import React, { useEffect } from "react";
 
 const Page = () => {
@@ -19,17 +17,18 @@ const Page = () => {
     setIsMounted(true);
   }, []);
   return (
-    <>
+    <ScrollArea>
       <Nav isLoaded={isMounted} />
       <div className="md:container">
         <Hero />
         <Skills />
-        <Experience />
         <About />
+        <Experience />
+        <Projects />
         <Contact />
       </div>
       <Footer />
-    </>
+    </ScrollArea>
   );
 };
 

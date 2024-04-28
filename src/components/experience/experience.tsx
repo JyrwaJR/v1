@@ -8,9 +8,12 @@ const Experience = () => {
   return (
     <div className="h-full">
       <div className="container h-full text-primary-foreground">
-        <div className="flex space-y-10 flex-col py-16 justify-center items-center">
-          <Fade>
-            <Text size="displayL" className="font-thin text-lightestSlate">
+        <div className="flex w-full flex-col items-center justify-center space-y-10  py-16">
+          <Fade className="w-full ">
+            <Text
+              size="displayL"
+              className="text-nowrap font-thin text-lightestSlate"
+            >
               My <span className="font-extrabold">Experience</span>
             </Text>
           </Fade>
