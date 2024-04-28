@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { Text, textVariants } from "../text";
+import { Text, textVariants } from "@components/text";
 import { useAnimation, useInView, motion } from "framer-motion";
-import Fade from "../fade";
+import Fade from "@components/fade";
 
 const About = () => {
   const ref = useRef(null);
@@ -24,21 +24,33 @@ const About = () => {
   const texts = [aboutMeText1, aboutMeText2];
   return (
     <div className="grid grid-cols-2 content-center items-center justify-center justify-items-center space-x-10 space-y-10 py-14">
-      <div className="col-span-2 md:col-span-1">
+      <div className="col-span-2 md:order-2  md:col-span-1">
         <div className="aspect-square h-full w-full">
-          <div className="max-h-[534px] max-w-[524]">
-            <motion.img
-              whileHover={{
-                scale: 1.1, // Scale the image to 1.1 times its original size
-              }}
-              src={"/seo/head-shot.jpg"}
-              className="aspect-square h-auto  rounded-xl object-center opacity-80"
-              alt="hero image not display"
-            />
-          </div>
+          <Fade>
+            <div className="relative max-h-[534px] max-w-[524px]">
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileHover={{
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                src={"/seo/head-shot.jpg"}
+                className="aspect-square h-auto rounded-xl object-center opacity-80"
+                alt="hero image"
+              />
+              <motion.div
+                initial={{ opacity: 0.4 }}
+                whileHover={{
+                  opacity: 0,
+                  transition: { duration: 0.5 },
+                }}
+                className="absolute inset-0 rounded-xl bg-green "
+              />
+            </div>
+          </Fade>
         </div>
       </div>
-      <div className="col-span-full h-full content-center space-y-5  md:col-span-1">
+      <div className="col-span-full h-full  content-start space-y-5 md:order-1  md:col-span-1">
         <div className="text-center text-lightestSlate">
           <Fade>
             <Text size="displayL" className="font-thin">

@@ -3,8 +3,8 @@ import { Text } from "../text";
 import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 import Fade from "../fade";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { email } from "@src/config";
+import Icons from "../icon";
 const One = () => {
   return (
     <div>
@@ -46,7 +46,7 @@ const Four = () => {
         })}
         href={`"mailto:${email}"`}
       >
-        Get In Touch <ArrowTopRightIcon className="ml-1 h-4 w-4" />
+        Get In Touch <Icons name="arrowupright" className="ml-2" />
       </Link>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, textVariants } from "../text";
-import { MySkill } from "./my-skills";
-import { SkillsCard } from "./skillsCard";
-import Fade from "../fade";
+import { Text, textVariants } from "@components/text";
+import { MySkill } from "@components/skills/my-skills";
+import { SkillsCard } from "@components/skills/skillsCard";
+import Fade from "@components/fade";
 
 const Skills = () => {
   return (

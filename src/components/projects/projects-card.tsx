@@ -2,7 +2,7 @@ import { Text } from "@components/text";
 import { buttonVariants } from "@components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Icons from "../icon";
+import Icons from "@components/icon";
 
 export type ProjectsCardProps = {
   projectName: string;

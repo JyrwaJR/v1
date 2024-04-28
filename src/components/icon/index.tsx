@@ -5,7 +5,6 @@ import ReactIcon from "./react";
 import NextJsIcon from "./nextjs";
 import NodeJsIcon from "./nodejs";
 import ExpressIcon from "./express";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import NestIcon from "./nest";
 import MongoDbIcon from "./mongodb";
 import SocketIcon from "./socket";
@@ -14,7 +13,16 @@ import TailwindCssIcon from "./tailwindcss";
 import FigmaIcon from "./figma";
 import CypressIcon from "./cypress";
 import GitIcon from "./git";
-import { FolderIcon, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  DownloadIcon,
+  FolderIcon,
+  Github,
+  Instagram,
+  Linkedin,
+  Twitter,
+  ArrowUpRight,
+  ExternalLinkIcon,
+} from "lucide-react";
 
 export interface IconProps {
   name?: string;
@@ -23,6 +31,10 @@ export interface IconProps {
 const Icons = ({ name, className }: IconProps) => {
   const style = cn("w-6 h-6", className);
   switch (name?.toLowerCase()) {
+    case "arrowupright":
+      return <ArrowUpRight className={style} />;
+    case "download":
+      return <DownloadIcon className={style} />;
     case "folder":
       return <FolderIcon className={style} />;
     case "github":

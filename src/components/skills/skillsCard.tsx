@@ -1,7 +1,7 @@
 import { cn } from "@src/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import Icons from "../icon";
-import { Text } from "../text";
+import Icons from "@components/icon";
+import { Text } from "@components/text";
 
 const SkillsCardVariants = cva("aspect-square w-44", {
   variants: {
@@ -29,18 +29,18 @@ export const SkillsCard = ({ iconName, name, variant }: SkillsCardProps) => {
       className={cn(
         SkillsCardVariants({
           variant: variant,
-        })
+        }),
       )}
     >
-      <div className="flex space-y-8 flex-col w-full h-full items-center justify-center">
+      <div className="flex h-full w-full flex-col items-center justify-center space-y-8">
         <div>
-          <Icons name={iconName} className="w-16 h-16" />
+          <Icons name={iconName} className="h-16 w-16" />
         </div>
         <div>
           <Text
             size={"h5"}
             weight={"semiBold"}
-            className="capitalize tracking-wide text-center"
+            className="text-center capitalize tracking-wide"
           >
             {name}
           </Text>

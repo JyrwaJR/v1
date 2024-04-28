@@ -1,19 +1,12 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
-import { Button, buttonVariants } from "../ui/button";
+import React from "react";
+import { buttonVariants } from "../ui/button";
 import Icons from "../icon";
 import { Text, textVariants } from "../text";
 import Fade from "../fade";
-import Nav from "../nav/nav";
-import MobileNav from "../nav/mobile-nav";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { email, socialMedia } from "@src/config";
 import { motion } from "framer-motion";
-type SocialLinksType = {
-  url: string;
-  name: string;
-};
 
 const Zero = () => {
   return (
@@ -117,7 +110,7 @@ const Five = () => {
         })}
         href={`mailto:${email}`}
       >
-        {`Let's`} Connect <ArrowTopRightIcon className="ml-1" />
+        {`Let's`} Connect <Icons name="arrowupright" className="ml-2 h-4 w-4" />
       </Link>
     </div>
   );

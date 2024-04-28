@@ -7,7 +7,6 @@ const Header = () => {
     <React.Fragment>
       <title>Harrison Jyrwa</title>
       <meta name="description" content={siteDescription} />
-      veer
       <meta property="og:url" content={siteUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={siteUrl} />
@@ -23,7 +22,7 @@ const Header = () => {
       {/* google site verification */}
       <meta
         name="google-site-verification"
-        content="xuV-K38QQwcUNaJhxNyxtDInrbi66eo2z44IoVhZeY4"
+        content="Uzl1iUhs8NMazyqhy_Ei3JP3LcccLWu-uDbvdGhrLRg"
       />
     </React.Fragment>
   );

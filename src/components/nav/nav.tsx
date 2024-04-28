@@ -1,58 +1,13 @@
 "use client";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
-import { buttonVariants } from "../ui/button";
-import { Text, textVariants } from "../text";
-import { DownloadIcon } from "@radix-ui/react-icons";
+import { textVariants } from "../text";
 import Fade from "../fade";
-import MobileNav from "./mobile-nav";
 import { Squash as Hamburger } from "hamburger-react";
-import { useScroll, motion } from "framer-motion";
-export type NavLinksTypes = {
-  url: string;
-  name: string;
-};
-export const NavLinks: NavLinksTypes[] = [
-  {
-    url: "/",
-    name: "About Me",
-  },
-  {
-    url: "/#skill",
-    name: "Skills",
-  },
-  {
-    url: "/",
-    name: "Experience",
-  },
-
-  {
-    url: "/",
-    name: "Projects",
-  },
-  {
-    url: "/",
-    name: "Contact Me",
-  },
-
-  {
-    url: "./resume.pdf",
-    name: "Resume",
-  },
-];
-
-const Nav = (
-  {
-    //isMobileOpen
-    // onClick,
-  }: {
-    isLoaded: boolean;
-    //isMobileOpen?: boolean;
-    onClick?: () => void;
-  },
-) => {
+import { motion } from "framer-motion";
+import { DesktopNav, MobileNav } from "@components/nav";
+const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-
   const onClick = useCallback(() => {
     setIsMobileOpen(!isMobileOpen);
   }, [isMobileOpen]);
@@ -64,11 +19,12 @@ const Nav = (
       document.body.style.overflow = ""; // Enable scrolling when nav closes
     }
   }, [isMobileOpen]);
+
+  if (!isLoaded) return null;
   return (
-    <>
+    <React.Fragment>
       <motion.div
         style={{
-          // backgroundColor: isMobileOpen ?  : "white",
           padding: "1.25rem",
           width: "100%",
           zIndex: 50,
@@ -115,48 +71,8 @@ const Nav = (
         </div>
       </motion.div>
       <MobileNav onClick={onClick} isOpen={isMobileOpen} />
-    </>
+    </React.Fragment>
   );
 };
 
 export default Nav;
-
-const DesktopNav = () => {
-  return (
-    <div className="hidden lg:flex">
-      <div className="flex items-center justify-center space-x-7">
-        {NavLinks.map((link, index) => (
-          <Fade
-            startY={link.name === "Resume" ? -50 : -25}
-            delay={index * 0.5 + 0.1}
-            key={index}
-          >
-            {link.name === "Resume" ? (
-              <Link
-                className={buttonVariants({
-                  variant: "outline",
-                })}
-                href={link.url}
-                target="_blank"
-              >
-                {link.name} <DownloadIcon className="ml-2 h-4 w-4" />
-              </Link>
-            ) : (
-              <Link href={link.url} target="_self">
-                <Text
-                  className={textVariants({
-                    size: "p3",
-                    weight: "semiBold",
-                    className: "text-slate hover:text-green",
-                  })}
-                >
-                  {link.name}
-                </Text>
-              </Link>
-            )}
-          </Fade>
-        ))}
-      </div>
-    </div>
-  );
-};

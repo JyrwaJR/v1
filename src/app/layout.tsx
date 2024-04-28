@@ -1,6 +1,6 @@
 "use client";
 import { Sora } from "next/font/google";
-import "./globals.css";
+import "@src/app/globals.css";
 import { ThemeProvider } from "@src/theme/providers";
 import Header from "@src/components/header";
 

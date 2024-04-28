@@ -1,23 +1,23 @@
 "use client";
 import React from "react";
-import { NavLinks } from "./nav";
 import Link from "next/link";
-import { calcLength, motion } from "framer-motion";
-import { Text, textVariants } from "../text";
-import { DownloadIcon } from "@radix-ui/react-icons";
-import { buttonVariants } from "../ui/button";
+import { AnimatePresence, motion } from "framer-motion";
+import { Text, textVariants } from "@components/text";
+import { buttonVariants } from "@components/ui/button";
 import Fade from "../fade";
-import { SocialMenuBar } from "../hero/hero";
+import { NavLinks } from "@components/nav/nav-links";
+import Icons from "../icon";
 
 type Props = {
   isOpen: boolean;
   onClick: () => void;
 };
-const MobileNav = ({ isOpen, onClick }: Props) => {
+export const MobileNav = ({ isOpen, onClick }: Props) => {
   const height = "calc(100vh - 5rem)";
   return (
-    <>
+    <AnimatePresence>
       <motion.div
+        exit={"exit"}
         initial={"hidden"}
         animate={isOpen ? "visible" : "hidden"}
         variants={{
@@ -90,7 +90,8 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
                     href={link.url}
                     target="_blank"
                   >
-                    {link.name} <DownloadIcon className="ml-2 h-4 w-4" />
+                    {link.name}{" "}
+                    <Icons name="download" className="ml-2 h-4 w-4" />
                   </Link>
                 ) : (
                   <Link href={link.url} target="_self">
@@ -139,8 +140,6 @@ const MobileNav = ({ isOpen, onClick }: Props) => {
         onClick={onClick}
         className="fixed bottom-0 left-0 right-0 top-0 mt-[5rem]  w-full backdrop-blur-sm "
       />
-    </>
+    </AnimatePresence>
   );
 };
-
-export default MobileNav;

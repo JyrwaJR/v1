@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
-import Fade from "../fade";
+import React, { useEffect, useRef } from "react";
+import Fade from "@components/fade";
 import { ShowLessOrMoreButton } from "./show-more-less-btn";
-import { ProjectsCard } from "./projects-card";
-import { projects } from "./my-projects";
-import { Text } from "../text";
+import { ProjectsCard } from "@components/projects/projects-card";
+import { projects } from "@components/projects/my-projects";
+import { Text } from "@components/text";
 import Link from "next/link";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "@components/ui/button";
+import { AnimatePresence, LayoutGroup, motion, useInView } from "framer-motion";
 
 const Project = () => {
   const [isShowCount, setIsShowCount] = React.useState<number>(3);
   const [isShowMore, setIsShowMore] = React.useState<boolean>(true);
+  const ref = useRef(null);
   const onClickShowMoreOrLess = () => {
     if (!isShowMore) {
       setIsShowCount(3);
@@ -51,22 +53,33 @@ const Project = () => {
               </div>
             </Fade>
             <div className="grid grid-cols-12 gap-5 ">
-              {projects.slice(0, isShowCount).map((item, index) => (
-                <div
-                  key={index}
-                  className="col-span-full md:col-span-6 lg:col-span-4 "
-                >
-                  <Fade delay={index * 0.7}>
-                    <ProjectsCard
-                      projectDescription={item.projectDescription}
-                      projectLink={item.projectLink}
-                      projectName={item.projectName}
-                      projectTechStack={item.projectTechStack}
-                      githubLink={item.githubLink}
-                    />
+              <AnimatePresence>
+                {projects.slice(0, isShowCount).map((item, index) => (
+                  <Fade
+                    className="col-span-full md:col-span-6 lg:col-span-4"
+                    key={index}
+                    delay={index > 3 ? index - 3 : 0}
+                  >
+                    <motion.div
+                      exit={{
+                        opacity: 0,
+                        transition: {
+                          duration: index * 0.2,
+                          staggerChildren: 0.5,
+                        },
+                      }}
+                    >
+                      <ProjectsCard
+                        projectName={item.projectName}
+                        projectDescription={item.projectDescription}
+                        projectTechStack={item.projectTechStack}
+                        githubLink={item.githubLink}
+                        projectLink={item.projectLink}
+                      />
+                    </motion.div>
                   </Fade>
-                </div>
-              ))}
+                ))}
+              </AnimatePresence>
               <div className="col-span-full">
                 <Fade delay={1}>
                   {projects.length > 3 && (

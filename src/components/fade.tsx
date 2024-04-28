@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { cn } from "@src/lib/utils";
-import clsx from "clsx";
 
 type FadeProps = {
   children: React.ReactNode;
@@ -27,6 +26,7 @@ const Fade = ({
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
+    amount: 0.5,
   });
   const style = cn("inherit", className);
   const mainControls = useAnimation();
@@ -38,9 +38,9 @@ const Fade = ({
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={style}>
       <motion.div
-        className={style}
+        className="inherit"
         variants={{
           hidden: {
             opacity: fadeIn ? 0 : 1,
@@ -85,6 +85,7 @@ const Fade = ({
             },
           },
         }}
+        transition={{ staggerChildren: 0.5 }}
         initial="hidden"
         animate={mainControls}
       >

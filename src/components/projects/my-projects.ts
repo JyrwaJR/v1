@@ -2,14 +2,6 @@ import { ProjectsCardProps } from "./projects-card";
 
 export const projects: ProjectsCardProps[] = [
   {
-    projectName: "Portfolio Website v1",
-    projectDescription:
-      "Crafted a dynamic portfolio website showcasing my skills and projects using Tailwind CSS, Next.js, and Vercel. Seamlessly deployed for optimal performance and accessibility.",
-    projectTechStack: "Nextjs | Tailwind | ES6 | Vercel",
-    githubLink: "https://github.com/JyrwaJR/v1",
-    projectLink: "https://jyrwaboys.vercel.app/",
-  },
-  {
     projectName: "Password Auth",
     projectDescription:
       "Password Auth is an innovative password and note manager application designed to enhance online security and simplify password management for users.",
@@ -22,6 +14,14 @@ export const projects: ProjectsCardProps[] = [
       "A Code Editor powered by Monaco Editor, the engine behind VS Code. Compile code across 40+ languages, customize themes, and access runtime insights.",
     projectTechStack: "Firebase | ES6 | MUI | React",
     githubLink: "https://github.com/JyrwaJR/password-manager",
+  },
+  {
+    projectName: "Portfolio Website v1",
+    projectDescription:
+      "Crafted a dynamic portfolio website showcasing my skills and projects using Tailwind CSS, Next.js, and Vercel. Seamlessly deployed for optimal performance and accessibility.",
+    projectTechStack: "Nextjs | Tailwind | ES6 | Vercel",
+    githubLink: "https://github.com/JyrwaJR/v1",
+    projectLink: "https://jyrwaboys.vercel.app/",
   },
   {
     projectName: "Church Management System",
