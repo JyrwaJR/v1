@@ -26,7 +26,7 @@ const Two = () => {
 const Three = () => {
   return (
     <div className="flex justify-center text-slate">
-      <div className="w-7/12">
+      <div className="w-[80%] md:w-7/12">
         <Text size={"p2"}>
           While {`I'm`} not actively seeking new opportunities at the moment,
           feel free to reach out anytime. Whether you have a question or simply

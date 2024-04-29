@@ -25,7 +25,7 @@ const Fade = ({
   const delayTime = delay === 0 ? 0.5 * 0.1 : delay ? delay * 0.5 : 0.2;
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: true,
+    once: false,
     amount: 0.5,
   });
   const style = cn("inherit", className);

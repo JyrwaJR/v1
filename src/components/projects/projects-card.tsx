@@ -22,7 +22,7 @@ export const ProjectsCard = ({
     <motion.div
       whileHover={{
         zIndex: 40,
-        y: -10,
+        y: -5,
         scale: 1.05,
         transition: { duration: 0.3 },
       }}
