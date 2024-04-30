@@ -1,4 +1,4 @@
-import { ProjectsCardProps } from "./projects-card";
+import { ProjectsCardProps } from "../components/projects/projects-card";
 
 export const projects: ProjectsCardProps[] = [
   {
@@ -24,11 +24,51 @@ export const projects: ProjectsCardProps[] = [
     projectLink: "https://jyrwaboys.vercel.app/",
   },
   {
-    projectName: "Church Management System",
+    projectName: "Easy Church",
     projectDescription:
       " This open-source project is designed to help churches and religious organizations manage their members, events, donations, and more effectively.",
-    projectTechStack: "Nextjs | Prisma | MongoDB | Tailwind | Vercel",
+    projectTechStack: "Nextjs | MongoDB | Tailwind | Vercel",
     projectLink: "https://easychurch.vercel.app/",
     githubLink: "https://github.com/JyrwaJR/balang-management-system",
+  },
+];
+type WorkedProjectsType = {
+  year: string;
+  title: string;
+  madeAt: string;
+  tech: string;
+  link?: string;
+  github?: string;
+};
+export const workedProjects: WorkedProjectsType[] = [
+  {
+    title: "Portfolio v1",
+    year: "2024",
+    madeAt: "-",
+    tech: "Next.js | TailwindCSS | Vercel",
+    link: "https://jyrwaboys.vercel.app/",
+    github: "",
+  },
+  {
+    title: "Easy Church | Church Management System",
+    year: "2024",
+    madeAt: "-",
+    tech: "Next.js | Prisma | Vercel | MongoDB",
+    link: "https://easychurch.vercel.app/",
+    github: "https://github.com/JyrwaJR/balang-management-system",
+  },
+  {
+    title: "Password Auth",
+    year: "2023",
+    madeAt: "NIELIT Shillong",
+    tech: "Flutter | Firebase | AES 256 | Dart",
+    github: "https://github.com/JyrwaJR/password-manager",
+  },
+  {
+    title: "Online Code Editor",
+    year: "2022",
+    madeAt: "MLCU, Shillong",
+    tech: "React | Firebase | Monaco Editor",
+    github: "https://github.com/JyrwaJR/password-manager",
   },
 ];

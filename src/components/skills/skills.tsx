@@ -1,12 +1,12 @@
 import React from "react";
 import { Text, textVariants } from "@components/text";
-import { MySkill } from "@components/skills/my-skills";
+import { MySkill } from "@src/contents/my-skills";
 import { SkillsCard } from "@components/skills/skillsCard";
 import Fade from "@components/fade";
 
 const Skills = () => {
   return (
-    <div className="my-4 md:my-14">
+    <section id="skill" className="my-4 md:my-14">
       <div className="grid grid-cols-12 content-center items-stretch justify-items-center">
         <div className="col-span-full my-5 h-full text-center">
           <Fade className="flex flex-col space-y-3">
@@ -45,7 +45,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

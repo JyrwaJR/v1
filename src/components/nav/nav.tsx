@@ -4,10 +4,22 @@ import React, { useCallback, useEffect, useState } from "react";
 import { textVariants } from "../text";
 import Fade from "../fade";
 import { Squash as Hamburger } from "hamburger-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { DesktopNav, MobileNav } from "@components/nav";
 const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+  const [isHidden, setIsHidden] = useState<boolean>(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous! && latest > 150) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  });
+
   const onClick = useCallback(() => {
     setIsMobileOpen(!isMobileOpen);
   }, [isMobileOpen]);
@@ -21,9 +33,10 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
   }, [isMobileOpen]);
 
   if (!isLoaded) return null;
+
   return (
     <React.Fragment>
-      <motion.div
+      <motion.nav
         style={{
           padding: "1.25rem",
           width: "100%",
@@ -34,6 +47,21 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
           right: 0,
           overflow: "hidden",
         }}
+        animate={isHidden ? "hidden" : "visible"}
+        variants={{
+          hidden: {
+            y: "-100%",
+            transition: {
+              duration: 0.3,
+            },
+          },
+          visible: {
+            y: 0,
+            transition: {
+              duration: 0.3,
+            },
+          },
+        }}
         className={isMobileOpen ? "bg-background" : "backdrop-blur-sm"}
       >
         <div className="flex h-full items-center justify-between">
@@ -42,7 +70,7 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
               className={textVariants({
                 size: "button1",
                 weight: "extraBold",
-                className: "text-green hover:text-slate",
+                className: "tracking-wider text-green hover:text-slate",
               })}
               href={"/"}
               target="_self"
@@ -69,7 +97,7 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
             </Fade>
           </div>
         </div>
-      </motion.div>
+      </motion.nav>
       <MobileNav onClick={onClick} isOpen={isMobileOpen} />
     </React.Fragment>
   );

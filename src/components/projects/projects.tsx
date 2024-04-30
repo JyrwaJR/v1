@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Fade from "@components/fade";
 import { ShowLessOrMoreButton } from "./show-more-less-btn";
 import { ProjectsCard } from "@components/projects/projects-card";
-import { projects } from "@components/projects/my-projects";
+import { projects } from "@src/contents/my-projects";
 import { Text } from "@components/text";
 import Link from "next/link";
 import { buttonVariants } from "@components/ui/button";
-import { AnimatePresence, LayoutGroup, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Project = () => {
   const [isShowCount, setIsShowCount] = React.useState<number>(3);
   const [isShowMore, setIsShowMore] = React.useState<boolean>(true);
-  const ref = useRef(null);
+
   const onClickShowMoreOrLess = () => {
     if (!isShowMore) {
       setIsShowCount(3);
@@ -29,9 +29,9 @@ const Project = () => {
 
   return (
     <>
-      <div className="h-full ">
+      <section id="projects" className="h-full ">
         <div className="h-full ">
-          <div className="flex aspect-auto w-full flex-col items-center justify-center space-y-10 py-16  ">
+          <div className="flex aspect-auto w-full flex-col items-center justify-center space-y-10 py-16">
             <Fade className="w-full text-center">
               <Text
                 size="displayL"
@@ -52,7 +52,7 @@ const Project = () => {
                 </Link>
               </div>
             </Fade>
-            <div className="grid grid-cols-12 gap-5 ">
+            <div className="grid grid-cols-12 gap-5">
               <AnimatePresence>
                 {projects.slice(0, isShowCount).map((item, index) => (
                   <Fade
@@ -94,7 +94,7 @@ const Project = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

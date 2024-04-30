@@ -26,7 +26,7 @@ export const ProjectsCard = ({
         scale: 1.05,
         transition: { duration: 0.3 },
       }}
-      className="group mx-4 flex min-h-[324px] min-w-[304] flex-col justify-between rounded-lg bg-navy px-7 py-8 shadow-sm hover:text-green md:mx-0"
+      className="group mx-4 flex aspect-square h-full max-h-[324px] min-h-full w-full min-w-full max-w-[304] flex-col justify-between rounded-lg bg-lightNavy px-7 py-8 shadow-sm hover:text-green md:mx-0"
     >
       <div className="flex flex-col items-start justify-stretch space-y-6 rounded-sm ">
         <div className=" flex w-full items-center justify-between ">
@@ -68,11 +68,11 @@ export const ProjectsCard = ({
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-between space-y-4 ">
+        <div className="flex flex-col items-start justify-between space-y-4">
           <div>
             <Text
               size={"h4"}
-              className="line-clamp-2  tracking-wide text-lightSlate group-hover:text-green"
+              className="line-clamp-2 tracking-wide text-lightSlate group-hover:text-green"
               weight={"bold"}
             >
               {projectName}
@@ -86,7 +86,7 @@ export const ProjectsCard = ({
       <div className="flex items-center justify-start">
         <Text
           size={"p3"}
-          className=" tracking-wide text-slate group-hover:text-green"
+          className="tracking-wide text-slate group-hover:text-green"
         >
           {projectTechStack}
         </Text>

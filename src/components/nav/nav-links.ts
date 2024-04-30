@@ -5,23 +5,23 @@ export type NavLinksTypes = {
 
 export const NavLinks: NavLinksTypes[] = [
   {
-    url: "/",
+    url: "#about",
     name: "About Me",
   },
   {
-    url: "/#skill",
+    url: "#skill",
     name: "Skills",
   },
   {
-    url: "/",
+    url: "#experience",
     name: "Experience",
   },
   {
-    url: "/",
+    url: "#projects",
     name: "Projects",
   },
   {
-    url: "/",
+    url: "#contact",
     name: "Contact Me",
   },
   {

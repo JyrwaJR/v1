@@ -55,7 +55,7 @@ const Four = () => {
 const items = [One, Two, Three, Four];
 const Contact = () => {
   return (
-    <div className="py-16">
+    <section id="contact" className="py-16">
       <div className="flex h-full flex-col place-items-center items-center justify-items-center space-y-5 text-center text-lightestSlate">
         {items.map((Item, index) => (
           <Fade key={index} delay={index}>
@@ -63,7 +63,7 @@ const Contact = () => {
           </Fade>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

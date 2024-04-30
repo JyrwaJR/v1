@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Nav,
   About,
@@ -10,7 +9,6 @@ import {
   Projects,
   Skills,
 } from "@src/components";
-import { AnimatePresence } from "framer-motion";
 import React, { useEffect } from "react";
 
 const Page = () => {
@@ -26,7 +24,6 @@ const Page = () => {
         <Hero />
         <About />
         <Skills />
-        {/* <Experience /> */}
         <Projects />
         <Contact />
       </div>

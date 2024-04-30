@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Text } from "../text";
-import { ExperienceType } from "./my-experience";
+import { ExperienceType } from "../../contents/my-experience";
 import Link from "next/link";
 interface Props extends ExperienceType {
   index: boolean;
@@ -22,16 +22,16 @@ export const ExperienceCard = ({
         <div className="h-full text-primary-foreground">
           <div className={style}>
             <div className="flex items-center space-x-7">
-              <div className="bg-lightestSlate aspect-square h-16 w-16 rounded-full">
+              <div className="aspect-square h-16 w-16 rounded-full bg-lightestSlate">
                 <Image
                   src={logoLink}
                   alt={companyName}
                   width={64}
                   height={64}
-                  className="object-contain h-full w-full"
+                  className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex justify-between w-full">
+              <div className="flex w-full justify-between">
                 <div>
                   <Text size="h4" weight="semiBold" className="tracking-wider">
                     {companyName}
@@ -46,7 +46,7 @@ export const ExperienceCard = ({
               </div>
             </div>
             <div>
-              <Text size="p2" weight={"thin"} className="text-slate indent-10">
+              <Text size="p2" weight={"thin"} className="indent-10 text-slate">
                 {description}
               </Text>
             </div>

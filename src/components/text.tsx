@@ -4,6 +4,16 @@ import { Slot } from "@radix-ui/react-slot";
 
 const textVariants = cva("not-italic no-underline", {
   variants: {
+    colors: {
+      default: "text-slate",
+      green: "text-green",
+      slate: "text-slate",
+      lightSlate: "text-lightSlate",
+      lightestSlate: "text-lightestSlate",
+      lightNavy: "text-lightNavy",
+      navy: "text-navy",
+      lightestNavy: "text-lightestNavy",
+    },
     variant: {
       default: "text-primary font-normal",
       primary: "text-primary font-normal",
@@ -38,10 +48,12 @@ const textVariants = cva("not-italic no-underline", {
       bold: "font-bold",
       extraBold: "font-extrabold",
     },
+
     defaultVariants: {
       variant: "default",
       size: "default",
       weight: "default",
+      colors: "default",
     },
   },
 });
