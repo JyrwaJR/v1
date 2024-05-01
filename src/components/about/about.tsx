@@ -24,19 +24,14 @@ const About = () => {
   const texts = [aboutMeText1, aboutMeText2];
   return (
     <section id="about">
-      <div className="grid grid-cols-2 content-center items-center justify-center justify-items-center space-x-10 space-y-10 py-14">
-        <div className="col-span-2 md:order-2  md:col-span-1">
+      <div className="grid h-full grid-cols-12 items-center justify-center justify-items-center space-x-5 px-5 py-14">
+        <div className="col-span-full h-full sm:col-span-full md:order-2 md:col-span-6">
           <div className="aspect-square h-full w-full">
             <Fade>
-              <div className="relative max-h-[534px] max-w-[524px]">
+              <div className="relative h-full  max-h-[534px] w-full max-w-[524px]">
                 <motion.img
-                  initial={{ opacity: 0 }}
-                  whileHover={{
-                    opacity: 1,
-                    transition: { duration: 0.5 },
-                  }}
                   src={"/seo/head-shot.jpg"}
-                  className="aspect-square h-auto rounded-xl object-center opacity-80"
+                  className="aspect-square h-auto rounded-xl object-center"
                   alt="hero image"
                 />
                 <motion.div
@@ -51,7 +46,7 @@ const About = () => {
             </Fade>
           </div>
         </div>
-        <div className="col-span-full h-full  content-start space-y-5 md:order-1  md:col-span-1">
+        <div className="mt:mt-0 col-span-full mt-5 h-full content-center space-y-5 sm:col-span-full md:order-1 md:col-span-6">
           <div className="text-center text-lightestSlate">
             <Fade>
               <Text size="displayL" className="font-thin">
@@ -66,7 +61,7 @@ const About = () => {
               </Text>
             </Fade>
           </div>
-          <div className="flex flex-col space-y-5 text-justify ">
+          <div className="flex flex-col space-y-5 text-justify">
             {texts.map((text, index) => (
               <Fade key={index} delay={index * 0.2}>
                 <Text size="p2" className="text-center text-lightSlate">

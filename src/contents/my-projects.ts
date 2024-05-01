@@ -9,7 +9,7 @@ export const projects: ProjectsCardProps[] = [
     githubLink: "https://github.com/JyrwaJR/password-manager",
   },
   {
-    projectName: "Online Code Editor Web App",
+    projectName: "Online Code Editor",
     projectDescription:
       "A Code Editor powered by Monaco Editor, the engine behind VS Code. Compile code across 40+ languages, customize themes, and access runtime insights.",
     projectTechStack: "Firebase | ES6 | MUI | React",
@@ -32,6 +32,7 @@ export const projects: ProjectsCardProps[] = [
     githubLink: "https://github.com/JyrwaJR/balang-management-system",
   },
 ];
+
 type WorkedProjectsType = {
   year: string;
   title: string;

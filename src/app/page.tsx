@@ -3,7 +3,6 @@ import {
   Nav,
   About,
   Contact,
-  Experience,
   Footer,
   Hero,
   Projects,
@@ -20,7 +19,7 @@ const Page = () => {
   return (
     <>
       <Nav isLoaded={isMounted} />
-      <div className="sm:container">
+      <div className="md:container">
         <Hero />
         <About />
         <Skills />

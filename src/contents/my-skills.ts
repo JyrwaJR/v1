@@ -21,12 +21,12 @@ export const MySkill: SkillType[] = [
     name: "Tailwind",
     iconName: "tailwind",
   },
-
   {
     iconName: "cypress",
     name: "Cypress",
   },
 ];
+
 type SkillType = {
   name: string;
   iconName: string;

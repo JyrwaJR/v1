@@ -52,7 +52,7 @@ const Project = () => {
                 </Link>
               </div>
             </Fade>
-            <div className="grid grid-cols-12 gap-5">
+            <div className="grid grid-cols-12 gap-5 ">
               <AnimatePresence>
                 {projects.slice(0, isShowCount).map((item, index) => (
                   <Fade
