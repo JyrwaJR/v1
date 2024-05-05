@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import { Sora } from "next/font/google";
 const config = {
   darkMode: ["class"],
   important: true,
@@ -28,6 +28,7 @@ const config = {
         xs: "0px",
       },
     },
+
     extend: {
       colors: {
         // brand colors

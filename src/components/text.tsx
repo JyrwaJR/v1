@@ -2,7 +2,7 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "@radix-ui/react-slot";
 
-const textVariants = cva("not-italic no-underline", {
+const textVariants = cva("not-italic no-underline font-sora", {
   variants: {
     colors: {
       default: "text-slate",

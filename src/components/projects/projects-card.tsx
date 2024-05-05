@@ -68,7 +68,7 @@ export const ProjectsCard = ({
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-between space-y-4">
+        <div className="flex  flex-col items-start justify-between space-y-5  ">
           <div>
             <Text
               size={"h4"}

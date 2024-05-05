@@ -6,14 +6,16 @@ import Fade from "../fade";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { DesktopNav, MobileNav } from "@components/nav";
+import { cn } from "@src/lib/utils";
 const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
-  const { scrollY } = useScroll();
   const [isHidden, setIsHidden] = useState<boolean>(false);
+  const { scrollY, scrollYProgress } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous! && latest > 150) {
+      // change to true
       setIsHidden(true);
     } else {
       setIsHidden(false);
@@ -21,8 +23,20 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
   });
 
   const onClick = useCallback(() => {
+    // open or close mobile nav
     setIsMobileOpen(!isMobileOpen);
   }, [isMobileOpen]);
+
+  // check if screen is resized
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsMobileOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (isMobileOpen) {
@@ -34,6 +48,9 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
 
   if (!isLoaded) return null;
 
+  const styles = cn(
+    isMobileOpen ? "bg-background " : "backdrop-blur-sm justify-start w-full",
+  );
   return (
     <React.Fragment>
       <motion.nav
@@ -42,6 +59,7 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
           width: "100%",
           zIndex: 50,
           position: "fixed",
+          justifyItems: "start",
           top: 0,
           left: 0,
           right: 0,
@@ -62,15 +80,20 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
             },
           },
         }}
-        className={isMobileOpen ? "bg-background" : "backdrop-blur-sm"}
+        className={styles}
       >
+        <motion.div
+          style={{ scaleX: scrollYProgress }}
+          className="fixed left-0 right-0 top-0 h-1 origin-top-left bg-green"
+        />
         <div className="flex h-full items-center justify-between">
           <Fade startY={-25}>
             <Link
               className={textVariants({
                 size: "button1",
                 weight: "extraBold",
-                className: "tracking-wider text-green hover:text-slate",
+                className:
+                  "uppercase tracking-widest text-green hover:text-slate",
               })}
               href={"/"}
               target="_self"
@@ -78,7 +101,6 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
               JyrwaBoy
             </Link>
           </Fade>
-
           <DesktopNav />
           <div className="lg:hidden">
             <Fade startY={-25}>
