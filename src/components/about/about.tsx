@@ -24,8 +24,8 @@ const About = () => {
   const texts = [aboutMeText1, aboutMeText2];
   return (
     <section id="about">
-      <div className="grid h-full grid-cols-12 items-center justify-center justify-items-center space-x-5 px-5 py-14">
-        <div className="col-span-full h-full sm:col-span-full md:order-2 md:col-span-6">
+      <div className="grid h-full grid-cols-12 items-center justify-center justify-items-center gap-5 md:gap-0 space-x-5 px-5 py-14">
+        <div className="col-span-full h-full sm:col-span-full lg:order-2 lg:col-span-6">
           <div className="aspect-square h-full w-full">
             <Fade>
               <div className="relative h-full  max-h-[534px] w-full max-w-[524px]">
@@ -46,7 +46,7 @@ const About = () => {
             </Fade>
           </div>
         </div>
-        <div className="mt:mt-0 col-span-full mt-5 h-full content-center space-y-5 sm:col-span-full md:order-1 md:col-span-6">
+        <div className="mt:mt-0 col-span-full mt-5 h-full content-center space-y-5 sm:col-span-full lg:order-1 lg:col-span-6">
           <div className="text-center text-lightestSlate">
             <Fade>
               <Text size="displayL" className="font-thin">
