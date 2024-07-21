@@ -1,8 +1,8 @@
-import React from "react";
-import { Text } from "../text";
-import { experienceList, ExperienceType } from "../../contents/my-experience";
-import { ExperienceCard } from "./experience-card";
-import Fade from "../fade";
+import React from 'react';
+import { Text } from '../text';
+import { experienceList, ExperienceType } from '../../contents/my-experience';
+import { ExperienceCard } from './experience-card';
+import Fade from '../fade';
 
 const Experience = () => {
   return (
@@ -14,7 +14,7 @@ const Experience = () => {
               size="displayL"
               className="text-nowrap font-thin text-lightestSlate"
             >
-              Where I have{" "}
+              Where I have{' '}
               <span className="font-extrabold capitalize text-green">
                 worked
               </span>

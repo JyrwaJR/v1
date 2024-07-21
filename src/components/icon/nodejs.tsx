@@ -1,10 +1,10 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 type Props = {
   className?: string;
 };
 const NodeJsIcon = ({ className }: Props) => {
-  const style = cn("fill-current w-14 h-14", className);
+  const style = cn('fill-current w-14 h-14', className);
   return (
     <svg
       width="50"

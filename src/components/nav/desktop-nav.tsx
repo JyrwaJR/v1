@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Fade from "@components/fade";
-import { buttonVariants } from "@components/ui/button";
-import { Text, textVariants } from "@components/text";
-import Icons from "@components/icon";
-import { NavLinks, NavLinksTypes } from "@components/nav";
+import Link from 'next/link';
+import Fade from '@components/fade';
+import { buttonVariants } from '@components/ui/button';
+import { Text, textVariants } from '@components/text';
+import Icons from '@components/icon';
+import { NavLinks, NavLinksTypes } from '@components/nav';
 export const DesktopNav = () => {
   return (
     <div className="hidden lg:flex">
@@ -22,15 +22,15 @@ const NavLinksComponent = ({ links }: NavLinksProps) => {
     <>
       {links.map((link, index) => (
         <Fade
-          startY={link.name === "Resume" ? -50 : -25}
+          startY={link.name === 'Resume' ? -50 : -25}
           delay={index * 0.5 + 0.1}
           key={index}
         >
-          {link.name === "Resume" ? (
+          {link.name === 'Resume' ? (
             <Link
               className={buttonVariants({
-                variant: "outline",
-                size: "sm",
+                variant: 'outline',
+                size: 'sm'
               })}
               href={link.url}
               target="_blank"
@@ -41,9 +41,9 @@ const NavLinksComponent = ({ links }: NavLinksProps) => {
             <Link href={link.url} target="_self">
               <Text
                 className={textVariants({
-                  size: "p3",
-                  weight: "semiBold",
-                  className: "text-slate hover:text-green",
+                  size: 'p3',
+                  weight: 'semiBold',
+                  className: 'text-slate hover:text-green'
                 })}
               >
                 {link.name}

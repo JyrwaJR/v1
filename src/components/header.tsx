@@ -1,5 +1,5 @@
-import { siteDescription, siteTitle, siteUrl } from "@src/config";
-import React from "react";
+import { siteDescription, siteTitle, siteUrl } from '@src/config';
+import React from 'react';
 
 const Header = () => {
   const imageUrl = `${siteUrl}/seo/og.png`;

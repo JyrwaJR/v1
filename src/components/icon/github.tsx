@@ -1,11 +1,11 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 
 type Props = {
   className?: string;
 };
 const GithubIcon = ({ className }: Props) => {
-  const style = cn("w-6 h-6 fill-current", className);
+  const style = cn('w-6 h-6 fill-current', className);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

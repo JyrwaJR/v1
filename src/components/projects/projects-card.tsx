@@ -1,8 +1,8 @@
-import { Text } from "@components/text";
-import { buttonVariants } from "@components/ui/button";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Icons from "@components/icon";
+import { Text } from '@components/text';
+import { buttonVariants } from '@components/ui/button';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Icons from '@components/icon';
 
 export type ProjectsCardProps = {
   projectName: string;
@@ -16,7 +16,7 @@ export const ProjectsCard = ({
   projectDescription,
   projectTechStack,
   projectLink,
-  githubLink,
+  githubLink
 }: ProjectsCardProps) => {
   return (
     <motion.div
@@ -24,7 +24,7 @@ export const ProjectsCard = ({
         zIndex: 40,
         y: -5,
         scale: 1.05,
-        transition: { duration: 0.3 },
+        transition: { duration: 0.3 }
       }}
       className="group flex aspect-square h-full max-h-[324px] min-h-full w-full min-w-full max-w-[304] flex-col justify-between rounded-lg bg-lightNavy px-7 py-8 shadow-sm hover:text-green md:mx-0"
     >
@@ -40,10 +40,10 @@ export const ProjectsCard = ({
                   target="_blank"
                   href={githubLink}
                   className={buttonVariants({
-                    variant: "ghost",
-                    size: "icon",
+                    variant: 'ghost',
+                    size: 'icon',
                     className:
-                      "text-slate hover:bg-transparent hover:text-green",
+                      'text-slate hover:bg-transparent hover:text-green'
                   })}
                 >
                   <Icons name="github" className="h-6 w-6" />
@@ -56,10 +56,10 @@ export const ProjectsCard = ({
                   target="_blank"
                   href={projectLink}
                   className={buttonVariants({
-                    variant: "ghost",
-                    size: "icon",
+                    variant: 'ghost',
+                    size: 'icon',
                     className:
-                      "text-slate hover:bg-transparent hover:text-green",
+                      'text-slate hover:bg-transparent hover:text-green'
                   })}
                 >
                   <Icons className="h-6 w-6" />
@@ -71,9 +71,9 @@ export const ProjectsCard = ({
         <div className="flex  flex-col items-start justify-between space-y-5  ">
           <div>
             <Text
-              size={"h4"}
+              size={'h4'}
               className="line-clamp-2 tracking-wide text-lightSlate group-hover:text-green"
-              weight={"bold"}
+              weight={'bold'}
             >
               {projectName}
             </Text>
@@ -87,7 +87,7 @@ export const ProjectsCard = ({
       </div>
       <div className="flex items-center justify-start">
         <Text
-          size={"p3"}
+          size={'p3'}
           className="line-clamp-[0.5] tracking-wide text-slate group-hover:text-green"
         >
           {projectTechStack}

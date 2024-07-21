@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 type Props = {
   fill?: string;
   width?: string;
@@ -6,10 +6,10 @@ type Props = {
   className?: string;
 };
 const TwitterIcon = ({
-  fill = "currentColor",
-  width = "20",
-  height = "20",
-  className,
+  fill = 'currentColor',
+  width = '20',
+  height = '20',
+  className
 }: Props) => {
   return (
     <svg

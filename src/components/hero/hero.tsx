@@ -1,18 +1,18 @@
-"use client";
-import Link from "next/link";
-import React from "react";
-import { buttonVariants } from "../ui/button";
-import Icons from "../icon";
-import { Text, textVariants } from "../text";
-import Fade from "../fade";
-import { email, socialMedia } from "@src/config";
-import { motion } from "framer-motion";
+'use client';
+import Link from 'next/link';
+import React from 'react';
+import { buttonVariants } from '../ui/button';
+import Icons from '../icon';
+import { Text, textVariants } from '../text';
+import Fade from '../fade';
+import { email, socialMedia } from '@src/config';
+import { motion } from 'framer-motion';
 
 const Zero = () => {
   return (
     <div className="">
-      <Text size={"h6"} className="text-brandRed-50">
-        {" "}
+      <Text size={'h6'} className="text-brandRed-50">
+        {' '}
         Hello
         <br />
       </Text>
@@ -22,12 +22,12 @@ const Zero = () => {
 const One = () => {
   return (
     <div className="">
-      <Text size={"displayL"} className="text-lightSlate">
-        {`I'am`}{" "}
+      <Text size={'displayL'} className="text-lightSlate">
+        {`I'am`}{' '}
         <span
           className={textVariants({
-            weight: "extraBold",
-            className: "text-green",
+            weight: 'extraBold',
+            className: 'text-green'
           })}
         >
           Harrison Jyrwa.
@@ -39,12 +39,12 @@ const One = () => {
 };
 const Two = () => {
   return (
-    <Text size={"displayL"} className="tracking-wide" weight={"extraBold"}>
-      {" "}
-      Software{" "}
+    <Text size={'displayL'} className="tracking-wide" weight={'extraBold'}>
+      {' '}
+      Software{' '}
       <span
         className={textVariants({
-          weight: "extraBold",
+          weight: 'extraBold'
         })}
       >
         Developer
@@ -56,12 +56,12 @@ const Two = () => {
 const Three = () => {
   return (
     <div>
-      <Text size={"displayM"} className="text-lightestSlate">
-        {" "}
-        Based In Shillong,{" "}
+      <Text size={'displayM'} className="text-lightestSlate">
+        {' '}
+        Based In Shillong,{' '}
         <span
           className={textVariants({
-            weight: "extraBold",
+            weight: 'extraBold'
           })}
         >
           India.
@@ -74,22 +74,22 @@ const Three = () => {
 const Four = () => {
   return (
     <div className="w-[95%] px-1 md:w-8/12">
-      <Text size={"p2"} className="text-slate">
-        {" "}
-        Passionate mobile &{" "}
+      <Text size={'p2'} className="text-slate">
+        {' '}
+        Passionate mobile &{' '}
         <span
           className={textVariants({
-            weight: "extraBold",
-            className: "text-green",
+            weight: 'extraBold',
+            className: 'text-green'
           })}
         >
           WEB
-        </span>{" "}
-        developer crafting innovative apps for Android, iOS, & the{" "}
+        </span>{' '}
+        developer crafting innovative apps for Android, iOS, & the{' '}
         <span
           className={textVariants({
-            weight: "extraBold",
-            className: "uppercase text-green",
+            weight: 'extraBold',
+            className: 'uppercase text-green'
           })}
         >
           web
@@ -104,9 +104,9 @@ const Five = () => {
     <div className="py-4">
       <Link
         className={buttonVariants({
-          variant: "outline",
-          size: "lg",
-          className: "px-24 py-7",
+          variant: 'outline',
+          size: 'lg',
+          className: 'px-24 py-7'
         })}
         href={`mailto:${email}`}
       >
@@ -146,17 +146,17 @@ export const SocialMenuBar = () => {
               whileHover={{
                 scale: 1.1,
                 y: -5,
-                transition: { duration: 0.2 },
+                transition: { duration: 0.2 }
               }}
             >
               <Link
                 href={link.url}
                 target="_blank"
                 className={buttonVariants({
-                  variant: "outline",
-                  size: "icon",
+                  variant: 'outline',
+                  size: 'icon',
                   className:
-                    "border-1 flex items-center justify-center rounded-full border-slate bg-transparent text-center  font-bold text-slate hover:scale-110 hover:border-green  hover:text-green",
+                    'border-1 flex items-center justify-center rounded-full border-slate bg-transparent text-center  font-bold text-slate hover:scale-110 hover:border-green  hover:text-green'
                 })}
               >
                 <Icons

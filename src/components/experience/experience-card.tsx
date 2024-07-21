@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { Text } from "../text";
-import { ExperienceType } from "../../contents/my-experience";
-import Link from "next/link";
+import Image from 'next/image';
+import { Text } from '../text';
+import { ExperienceType } from '../../contents/my-experience';
+import Link from 'next/link';
 interface Props extends ExperienceType {
   index: boolean;
 }
@@ -11,11 +11,11 @@ export const ExperienceCard = ({
   description,
   linkToCompany,
   logoLink,
-  index,
+  index
 }: Props) => {
   const style = index
-    ? "h-full py-7 rounded-2xl text-white border border-green px-6 space-y-7"
-    : "h-full bg-zinc-800/100 py-7 rounded-2xl text-primary-foreground px-6 space-y-7";
+    ? 'h-full py-7 rounded-2xl text-white border border-green px-6 space-y-7'
+    : 'h-full bg-zinc-800/100 py-7 rounded-2xl text-primary-foreground px-6 space-y-7';
   return (
     <Link href={linkToCompany} target="_blank">
       <div className="space-x-5">
@@ -46,7 +46,7 @@ export const ExperienceCard = ({
               </div>
             </div>
             <div>
-              <Text size="p2" weight={"thin"} className="indent-10 text-slate">
+              <Text size="p2" weight={'thin'} className="indent-10 text-slate">
                 {description}
               </Text>
             </div>

@@ -1,10 +1,10 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 type Props = {
   className?: string;
 };
 const NextJsIcon = ({ className }: Props) => {
-  const style = cn("fill-current w-14 h-14", className);
+  const style = cn('fill-current w-14 h-14', className);
   return (
     <svg
       width="57"
@@ -16,7 +16,7 @@ const NextJsIcon = ({ className }: Props) => {
       <g clip-path="url(#clip0_196_515)">
         <mask
           id="mask0_196_515"
-          style={{ maskType: "alpha" }} // string has no properties in common with type properties<string | number,string & {}>
+          style={{ maskType: 'alpha' }} // string has no properties in common with type properties<string | number,string & {}>
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
@@ -26,7 +26,7 @@ const NextJsIcon = ({ className }: Props) => {
         >
           <path
             d="M28.4399 56C43.9039 56 56.4399 43.464 56.4399 28C56.4399 12.536 43.9039 0 28.4399 0C12.976 0 0.439941 12.536 0.439941 28C0.439941 43.464 12.976 56 28.4399 56Z"
-            className={"text-green"}
+            className={'text-green'}
           />
         </mask>
         <g mask="url(#mask0_196_515)">

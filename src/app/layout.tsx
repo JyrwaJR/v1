@@ -1,18 +1,18 @@
-"use client";
-import { Sora } from "next/font/google";
-import "@src/app/globals.css";
-import { ThemeProvider } from "@src/theme/providers";
-import Header from "@src/components/header";
+'use client';
+import { Sora } from 'next/font/google';
+import '@src/app/globals.css';
+import { ThemeProvider } from '@src/theme/providers';
+import Header from '@src/components/header';
 
 const sora = Sora({
-  subsets: ["latin"],
-  display: "swap",
+  subsets: ['latin'],
+  display: 'swap',
   preload: true,
-  weight: ["200", "300", "400", "600", "700"],
+  weight: ['200', '300', '400', '600', '700']
 });
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {

@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import Fade from "@components/fade";
-import { ShowLessOrMoreButton } from "./show-more-less-btn";
-import { ProjectsCard } from "@components/projects/projects-card";
-import { projects } from "@src/contents/my-projects";
-import { Text } from "@components/text";
-import Link from "next/link";
-import { buttonVariants } from "@components/ui/button";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect } from 'react';
+import Fade from '@components/fade';
+import { ShowLessOrMoreButton } from './show-more-less-btn';
+import { ProjectsCard } from '@components/projects/projects-card';
+import { projects } from '@src/contents/my-projects';
+import { Text } from '@components/text';
+import Link from 'next/link';
+import { buttonVariants } from '@components/ui/button';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Project = () => {
   const [isShowCount, setIsShowCount] = React.useState<number>(3);
@@ -35,7 +35,7 @@ const Project = () => {
             <Fade className="w-full text-center">
               <Text
                 size="displayL"
-                weight={"extraBold"}
+                weight={'extraBold'}
                 className="text-nowrap text-lightestSlate"
               >
                 Projects
@@ -44,8 +44,8 @@ const Project = () => {
                 <Link
                   href="/projects"
                   className={buttonVariants({
-                    variant: "link",
-                    className: "text-slate hover:text-green",
+                    variant: 'link',
+                    className: 'text-slate hover:text-green'
                   })}
                 >
                   View list of projects I have worked on ?
@@ -65,8 +65,8 @@ const Project = () => {
                         opacity: 0,
                         transition: {
                           duration: index * 0.2,
-                          staggerChildren: 0.5,
-                        },
+                          staggerChildren: 0.5
+                        }
                       }}
                     >
                       <ProjectsCard

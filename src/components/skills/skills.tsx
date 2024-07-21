@@ -1,8 +1,8 @@
-import React from "react";
-import { Text, textVariants } from "@components/text";
-import { MySkill } from "@src/contents/my-skills";
-import { SkillsCard } from "@components/skills/skillsCard";
-import Fade from "@components/fade";
+import React from 'react';
+import { Text, textVariants } from '@components/text';
+import { MySkill } from '@src/contents/my-skills';
+import { SkillsCard } from '@components/skills/skillsCard';
+import Fade from '@components/fade';
 
 const Skills = () => {
   return (
@@ -11,19 +11,19 @@ const Skills = () => {
         <div className="col-span-full h-full text-center">
           <Fade className="flex flex-col gap-5">
             <Text className="text-5xl leading-10 tracking-tighter text-lightestSlate">
-              Tools /{" "}
+              Tools /{' '}
               <span
                 className={textVariants({
-                  weight: "extraBold",
-                  className: "text-green",
+                  weight: 'extraBold',
+                  className: 'text-green'
                 })}
               >
                 Skills
               </span>
             </Text>
             <Text
-              size={"p2"}
-              weight={"thin"}
+              size={'p2'}
+              weight={'thin'}
               className="pt-5 text-5xl leading-10 tracking-tighter text-lightSlate"
             >
               Here are a few technologies I’ve been working with recently

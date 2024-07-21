@@ -1,6 +1,6 @@
-"use client";
-import { Nav } from "@src/components";
-import React, { useEffect } from "react";
+'use client';
+import { Nav } from '@src/components';
+import React, { useEffect } from 'react';
 
 const ProjectLayout = ({ children }: { children: React.ReactNode }) => {
   const [isLoaded, setIsLoaded] = React.useState<boolean>(false);

@@ -1,10 +1,10 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 type Props = {
   className?: string;
 };
 const TailwindCssIcon = ({ className }: Props) => {
-  const style = cn("fill-current w-14 h-14", className);
+  const style = cn('fill-current w-14 h-14', className);
 
   return (
     <svg
@@ -15,7 +15,7 @@ const TailwindCssIcon = ({ className }: Props) => {
       <g clip-path="url(#clip0_196_521)">
         <mask
           id="mask0_196_521"
-          style={{ maskType: "luminance" }}
+          style={{ maskType: 'luminance' }}
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"

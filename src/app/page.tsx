@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   Nav,
   About,
@@ -6,9 +6,9 @@ import {
   Footer,
   Hero,
   Projects,
-  Skills,
-} from "@src/components";
-import React, { useEffect } from "react";
+  Skills
+} from '@src/components';
+import React, { useEffect } from 'react';
 
 const Page = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false);

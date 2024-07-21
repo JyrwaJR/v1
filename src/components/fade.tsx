@@ -1,7 +1,7 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
-import { cn } from "@src/lib/utils";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import { cn } from '@src/lib/utils';
 
 type FadeProps = {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ type FadeProps = {
   startY?: number;
   startX?: number;
   fadeIn?: boolean;
-  type?: "just" | "tween" | "spring" | "inertia" | "keyframes";
+  type?: 'just' | 'tween' | 'spring' | 'inertia' | 'keyframes';
   className?: string;
 };
 
@@ -18,22 +18,22 @@ const Fade = ({
   delay,
   startX,
   startY,
-  type = "tween",
+  type = 'tween',
   fadeIn = true,
-  className,
+  className
 }: FadeProps) => {
   const delayTime = delay === 0 ? 0.5 * 0.1 : delay ? delay * 0.5 : 0.2;
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false,
-    amount: 0.5,
+    amount: 0.5
   });
-  const style = cn("inherit", className);
+  const style = cn('inherit', className);
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible");
+      mainControls.start('visible');
     }
   }, [isInView, mainControls]);
 
@@ -45,7 +45,7 @@ const Fade = ({
           hidden: {
             opacity: fadeIn ? 0 : 1,
             x: startX || 0,
-            y: startY || 50,
+            y: startY || 50
           },
           visible: {
             opacity: fadeIn ? 1 : 0,
@@ -58,9 +58,9 @@ const Fade = ({
                 duration: 0.5,
                 damping: 0,
                 easings: {
-                  type: "easeInOut",
-                  stiffness: 100,
-                },
+                  type: 'easeInOut',
+                  stiffness: 100
+                }
               },
               x: {
                 type: type,
@@ -68,9 +68,9 @@ const Fade = ({
                 duration: 0.5,
                 damping: 0,
                 easings: {
-                  type: "easeInOut",
-                  stiffness: 100,
-                },
+                  type: 'easeInOut',
+                  stiffness: 100
+                }
               },
               opacity: {
                 type: type,
@@ -78,12 +78,12 @@ const Fade = ({
                 delay: delayTime ? delayTime : 0.5,
                 damping: 300,
                 easings: {
-                  type: "easeInOut",
-                  stiffness: 100,
-                },
-              },
-            },
-          },
+                  type: 'easeInOut',
+                  stiffness: 100
+                }
+              }
+            }
+          }
         }}
         transition={{ staggerChildren: 0.5 }}
         initial="hidden"

@@ -1,12 +1,12 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 
 type Props = {
   className?: string;
 };
 
 const TypeScriptIcon: React.FC<Props> = ({ className }: Props) => {
-  const style = cn("fill-current w-6 h-6", className);
+  const style = cn('fill-current w-6 h-6', className);
   return (
     <svg
       viewBox="0 0 57 56"

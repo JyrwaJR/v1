@@ -1,8 +1,8 @@
-import { cn } from "@src/lib/utils";
-import React from "react";
+import { cn } from '@src/lib/utils';
+import React from 'react';
 
 const InstagramIcon = ({ className }: { className?: string }) => {
-  const style = cn("fill-current w-6 h-6", className);
+  const style = cn('fill-current w-6 h-6', className);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

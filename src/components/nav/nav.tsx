@@ -1,18 +1,18 @@
-"use client";
-import Link from "next/link";
-import React, { useCallback, useEffect, useState } from "react";
-import { textVariants } from "../text";
-import Fade from "../fade";
-import { Squash as Hamburger } from "hamburger-react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { DesktopNav, MobileNav } from "@components/nav";
-import { cn } from "@src/lib/utils";
+'use client';
+import Link from 'next/link';
+import React, { useCallback, useEffect, useState } from 'react';
+import { textVariants } from '../text';
+import Fade from '../fade';
+import { Squash as Hamburger } from 'hamburger-react';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { DesktopNav, MobileNav } from '@components/nav';
+import { cn } from '@src/lib/utils';
 const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isHidden, setIsHidden] = useState<boolean>(false);
   const { scrollY, scrollYProgress } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous! && latest > 150) {
       // change to true
@@ -34,51 +34,51 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
         setIsMobileOpen(false);
       }
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
     if (isMobileOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling when nav opens
+      document.body.style.overflow = 'hidden'; // Disable scrolling when nav opens
     } else {
-      document.body.style.overflow = ""; // Enable scrolling when nav closes
+      document.body.style.overflow = ''; // Enable scrolling when nav closes
     }
   }, [isMobileOpen]);
 
   if (!isLoaded) return null;
 
   const styles = cn(
-    isMobileOpen ? "bg-background " : "backdrop-blur-sm justify-start w-full",
+    isMobileOpen ? 'bg-background ' : 'backdrop-blur-sm justify-start w-full'
   );
   return (
     <React.Fragment>
       <motion.nav
         style={{
-          padding: "1.25rem",
-          width: "100%",
+          padding: '1.25rem',
+          width: '100%',
           zIndex: 50,
-          position: "fixed",
-          justifyItems: "start",
+          position: 'fixed',
+          justifyItems: 'start',
           top: 0,
           left: 0,
           right: 0,
-          overflow: "hidden",
+          overflow: 'hidden'
         }}
-        animate={isHidden ? "hidden" : "visible"}
+        animate={isHidden ? 'hidden' : 'visible'}
         variants={{
           hidden: {
-            y: "-100%",
+            y: '-100%',
             transition: {
-              duration: 0.3,
-            },
+              duration: 0.3
+            }
           },
           visible: {
             y: 0,
             transition: {
-              duration: 0.3,
-            },
-          },
+              duration: 0.3
+            }
+          }
         }}
         className={styles}
       >
@@ -90,12 +90,12 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
           <Fade startY={-25}>
             <Link
               className={textVariants({
-                size: "button1",
-                weight: "extraBold",
+                size: 'button1',
+                weight: 'extraBold',
                 className:
-                  "uppercase tracking-widest text-green hover:text-slate",
+                  'uppercase tracking-widest text-green hover:text-slate'
               })}
-              href={"/"}
+              href={'/'}
               target="_self"
             >
               JyrwaBoy
