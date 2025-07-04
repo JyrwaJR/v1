@@ -24,12 +24,19 @@ export const projects: ProjectsCardProps[] = [
     projectLink: 'https://jyrwaboys.vercel.app/'
   },
   {
-    projectName: 'Easy Church',
+    projectName: 'KnowIns',
     projectDescription:
       ' This open-source project is designed to help churches and religious organizations manage their members, events, donations, and more effectively.',
     projectTechStack: 'Nextjs | MongoDB | Tailwind | Vercel',
     projectLink: 'https://easychurch.vercel.app/',
     githubLink: 'https://github.com/JyrwaJR/balang-management-system'
+  },
+  {
+    projectName: 'Kot Jingrwai',
+    projectDescription:
+      'Built an offline-first mobile application to digitalise the Kot Jingrwai handbook, enabling users to conveniently read, search, and access its content without requiring an internet connection. ',
+    projectTechStack: 'React Native | ES6 | NativeWind | Expo',
+    githubLink: 'https://github.com/pixel-thread/kot-og-rwai'
   }
 ];
 

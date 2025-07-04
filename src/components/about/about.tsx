@@ -18,9 +18,10 @@ const About = () => {
     }
   }, [isInView, mainControls]);
   const aboutMeText1 =
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque id accusantium laudantium dignissimos, officia eum, minima rerum praesentium totam molestiae necessitatibus. Asperiores tempora excepturi blanditiis debitis unde fuga architecto nam.';
+    'I am a software developer with a Master of Computer Applications degree from Martin Luther Christian University (MLCU), graduating in 2021. Over the past few years, I have been deeply involved in frontend development, specialising in building clean, scalable, and high-performance web applications using React and Next.js. My approach to development focuses on delivering intuitive user experiences backed by maintainable and optimised codebases.';
+
   const aboutMeText2 =
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque id accusantium laudantium dignissimos, officia eum, minima rerum praesentium totam molestiae necessitatibus. Asperiores tempora excepturi blanditiis debitis unde fuga architecto nam.';
+    'Currently, I am expanding my skills to build full-stack solutions while staying grounded in writing efficient frontend architectures. I enjoy translating complex requirements into practical and reliable solutions, and I am always eager to learn new technologies to solve real-world problems effectively. Outside of coding, I actively explore design systems and performance best practices to enhance the quality of every product I work on.';
   const texts = [aboutMeText1, aboutMeText2];
   return (
     <section id="about">
