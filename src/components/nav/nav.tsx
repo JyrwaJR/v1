@@ -86,7 +86,7 @@ const Nav = ({ isLoaded }: { isLoaded: boolean }) => {
           style={{ scaleX: scrollYProgress }}
           className="fixed left-0 right-0 top-0 h-1 origin-top-left bg-green"
         />
-        <div className="flex h-full items-center justify-between">
+        <div className="flex h-full w-full items-center justify-between">
           <Fade startY={-25}>
             <Link
               className={textVariants({

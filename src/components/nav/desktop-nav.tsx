@@ -4,6 +4,7 @@ import { buttonVariants } from '@components/ui/button';
 import { Text, textVariants } from '@components/text';
 import Icons from '@components/icon';
 import { NavLinks, NavLinksTypes } from '@components/nav';
+
 export const DesktopNav = () => {
   return (
     <div className="hidden lg:flex">
@@ -17,6 +18,7 @@ export const DesktopNav = () => {
 type NavLinksProps = {
   links: NavLinksTypes[];
 };
+
 const NavLinksComponent = ({ links }: NavLinksProps) => {
   return (
     <>
